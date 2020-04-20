@@ -39,9 +39,6 @@ This project is written in HTML5, CSS, Bootstrap, jQuery and JavaScript.
 ## Support and contact details
 Should you be unable to access my web application, have any recommendations or questions, feel free to email me; kamaulorna@gmail.com.
 
-## Known-bugs
-1. The total price reflected in the confirmation messages may not be a true reflection of the actual total
-
 ## To-do
 1. Track all messages sent in the feedback section
 
