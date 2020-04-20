@@ -129,7 +129,6 @@ function deliveryOptions(){
       checkoutTotal =checkoutTotal + parseInt($(this).text())
       alert(checkoutTotal);
     });
-
 }
 
 function pickUp(){
@@ -151,8 +150,11 @@ function clearTextarea(){
 }
 
 function addOrder(){
-	$('#placeorder').prop('disabled', false);
-	$("input[type='checkbox']").prop({ //enable check boxes
+	$('#placeorder').prop('disabled', false); //enable button
+	$("input[type='checkbox']").prop({ //enable checkboxes
 		disabled: false
+  });
+  $("input[type='checkbox']").prop({ //uncheck previously checked checkboxes
+		checked: false
 	});
 }
