@@ -130,7 +130,6 @@ function deliveryOptions() {
   $(".totalPick").text(checkoutTotal);
   var checkoutTotalDel = checkoutTotal + 200; //add Ksh.200 to checkout total when delivery is chosen
   $(".totalDel").text(checkoutTotalDel);
-  $(".grandtot").text(checkoutTotal);
 }
 
 function pickUp() {

@@ -42,5 +42,5 @@ Should you be unable to access my web application, have any recommendations or q
 ## To-do
 1. Track all messages sent in the feedback section
 
-## [License](https://github.com/lornakamau/pizzeria/blob/master/Documents/moringa-school-projects/pizzeria/LICENSE.md)
+## [License](https://github.com/lornakamau/pizzeria/blob/master/LICENSE.md)
 MIT (c) 2020 [Lorna Kamau](https://github.com/lornakamau)
