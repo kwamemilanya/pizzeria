@@ -71,33 +71,21 @@ function placeOrder(){ //function for placing an order
 		$('#placeorder').prop('disabled', true); //deactivate button after order is made to prevent client from changing order once the order is placed
 		$("#yourorder").show();
 		var price = (sizeCost + crustCost + toppingsCost);
-		var totalPrice = parseInt(price * number);
-    var totalPriceDel = (totalPrice + 200);
-    
+    var totalPrice = parseInt(price * number);
 		$(".salutation").text("Hey" + " " + name + ". Here's your order:");
 		$(".pizza-size").append('<tr><td id="pizza-size">' + size);
 		$(".number").append('<tr><td id="number">' + number);
 		$(".pizza-crust").append('<tr><td id="pizza-crust">' + crust);
     $(".pizza-flavor").append('<tr><td id="pizza-flavor">' + flavor);
     $(".pizzaTotal1").append('<tr><td id="pizzaTotal1">' + totalPrice);
-    arrayTotal.push(totalPrice);
-
+    arrayTotal.push(totalPrice); //create an array for all total prices
     if (toppings == "") {
 			$(".toppings").append('<tr><td id="pizza-toppings">' + "-");
 		}
 		if (toppings != "") {
 			$(".toppings").append('<tr><td id="pizza-toppings">' + toppings);
 		}
-		/*if (toppings == "") {
-			var toppingsStatus = '-';
-		}
-		if (toppings != "") {
-			var toppingsStatus = toppings;
-    }*/
-    //$("#ordersmade").append('<tr><td class="pizza-flavor">' + flavor + '<tr><td class="number">' + number + '<tr><td class="pizza-size">' + size + '<tr><td class="pizza-crust">' + crust + '<tr><td class="toppings">' + toppingsStatus + '<tr><td class="pizzaTotal1">' + totalPrice);
 		$(".name").text(name);
-		$(".total").text(totalPrice);
-    $(".totalDel").text(totalPriceDel);
 	} else {
 		document.getElementById("pizza-toppings-help").innerHTML = "Please select a maximum of 3!";
 		document.getElementById("pizza-toppings-help").style.cssText = 'color:red !important' //overrides previous color styling
@@ -112,8 +100,7 @@ function makeDelivery(){
 	$(".phone").text(phone);
 	$("#delivery").hide();
 }
- var arrayTotal = [];
-
+ 
 $(document).ready(function (){
 	$("#orders").submit(function (event) {
 		event.preventDefault();
@@ -129,6 +116,8 @@ function cancelOrders(){
 	location.reload(); //reload contents of page to original status
 }
 
+var arrayTotal = []; //global array used to store all total prices for each order
+
 function deliveryOptions(){
 	$("#deliveryOptions").show();
 	$("#orderDetails").hide();
@@ -136,11 +125,11 @@ function deliveryOptions(){
   $('#placeorder').prop('disabled', false); //enable place order button
   var checkoutTotal = 0;
     arrayTotal.forEach(function(index){
-      //var tryX = $(this).text();
-      //var tryY = parseInt(tryX);
       checkoutTotal = checkoutTotal + index;
     });
-
+    $(".totalPick").text(checkoutTotal);
+    var checkoutTotalDel = checkoutTotal + 200; //add Ksh.200 to checkout total when delivery is chosen
+    $(".totalDel").text(checkoutTotalDel);
 }
 
 function pickUp(){
