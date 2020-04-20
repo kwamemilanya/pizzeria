@@ -87,7 +87,7 @@ function placeOrder(){ //function for placing an order
 		}
 		$(".name").text(name);
 	} else {
-		document.getElementById("pizza-toppings-help").innerHTML = "Please select a maximum of 3!";
+    document.getElementById("pizza-toppings-help").innerHTML = "Please select a maximum of 3!";
 		document.getElementById("pizza-toppings-help").style.cssText = 'color:red !important' //overrides previous color styling
 	}
 }
